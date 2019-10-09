@@ -1,5 +1,5 @@
 <template lang="html">
-  <li v-on:click="handleClick">{{country.name}}</li>
+  <option :value="country.alpha3Code">{{country.name}}</option>
 </template>
 
 <script>

@@ -8,8 +8,9 @@
        <span v-for="(Language) in country.languages">
           {{Language.name}},
        </span>
-
      </p>
+     <img class="flag" :src="country.flag">
+
   </div>
 </template>
 
@@ -21,4 +22,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  .flag {
+    width: 100px;    
+  }
 </style>

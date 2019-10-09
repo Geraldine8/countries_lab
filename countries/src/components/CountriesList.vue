@@ -1,8 +1,10 @@
 <template lang="html">
   <div class="filter">
-    <ul>
+    <br>
+    <select v-on:change="handleSelected"><!-- /cuando select cambie de valor va a llamar handleSelected -->
+      <option>Select country</option>
       <country-option v-for="(country, index) in countries" :country="country" :key="index"></country-option>
-    </ul>
+    </select>
   </div>
 
 </template>
@@ -18,8 +20,9 @@ export default {
     "country-option": CountryOption
   },
   methods: {
-    handleSelected(event){
-      eventBus.$emit('country-selected', event.target.value)
+    handleSelected(event){ // maneja el element seleccionado en handleselected
+      const country = this.countries.find(country => country.alpha3Code === event.target.value)
+      eventBus.$emit('country-selected', country)
     }
   }
 }
@@ -27,3 +30,8 @@ export default {
 
 <style lang="css" scoped>
 </style>
+
+<!--
+What is an Event Bus? Well, it’s kind of summed up in the name itself.
+It’s a mode of transportation for one component to pass props from one component to another,
+ no matter where those components are located in the tre -->
