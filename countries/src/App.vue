@@ -3,7 +3,7 @@
     <h2>Countries</h2>
     <div class="wrapper">
       <countries-list :countries='countries'></countries-list>
-      <country-detail :country='selectedCountry' class="culo"></country-detail>
+      <country-detail :country='selectedCountry' class="details"></country-detail>
     </div>
   </div>
 </template>
@@ -56,7 +56,7 @@ export default {
     /* background-color: #CBF3F0; */
 
   }
-  .culo {
+  .details {
     border-style: inset;
     /* border: 3px solid red; */
     width: 20%;
